@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
     path('', include('Test.urls')),
+    path('yt/',include('Test.urls')),
     
 
   

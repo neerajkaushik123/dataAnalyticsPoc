@@ -4,6 +4,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 
+
+def yt_vid(request):
+    return render(request, 'ytvideo.html')
+
 def login_user(request):
     if request.method =='POST':
         username = request.POST['username']
@@ -11,7 +15,7 @@ def login_user(request):
 
         if username == "admin" and password =="admin":
             messages.success(request, 'Working')
-            return redirect('login')
+            return redirect('yt/')
 
         
        # user = authenticate(request, username=username, password=password)
@@ -26,6 +30,4 @@ def login_user(request):
 
     else:
         return render(request, 'Login Page Github.html')
-
-
 
