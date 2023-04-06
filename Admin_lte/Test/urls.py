@@ -4,5 +4,5 @@ from . import views
 
 
 urlpatterns =   [
-    path('', views.say_cute)
+    path('', views.render_page)
 ]  

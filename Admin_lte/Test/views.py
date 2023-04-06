@@ -1,7 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from django.shortcuts import render
 
 
-def say_cute(request):
-    return HttpResponse('Hii, if this works you are a god')
-    
+def render_page(request):
+    return render(request, 'Login Page Github.html')
