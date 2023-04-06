@@ -8,14 +8,21 @@ def login_user(request):
     if request.method =='POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+
+        if username == "admin" and password =="admin":
+            messages.success(request, 'Working')
+            return redirect('login')
+
+        
+       # user = authenticate(request, username=username, password=password)
     
-        if user is not None:
-            login(request, user)
-            return redirect('Test')
-        else:
-         messages.success(request, 'Failed')
-         return redirect('admin/')
+        # if user is not None:
+        #     login(request, user)
+        #     messages.success(request, 'Working')
+        #     return redirect('')
+        # else:
+        #  messages.success(request, 'Failed')
+        #  return redirect('admin/')
 
     else:
         return render(request, 'Login Page Github.html')
