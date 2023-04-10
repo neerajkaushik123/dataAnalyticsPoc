@@ -12,24 +12,22 @@
         </style>
     </head>
     <body>
-        <form action="action_page.php" mehtod="post">
+
             <div class="imgcontainer">
                 <img src="https://hips.hearstapps.com/womansday/assets/17/39/1506709524-cola-0247.jpg" alt="Cute dog" class="avatar">
  
             </div>
 
-            <div class="container">
-                <label for="username"> <b>USERNAME</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <br>
+                <input type="submit" value="Login">
+            </form>
 
-                <label for="psw"> <b>PASSWORD</b></label>
-                <input type="password" placeholder="Enter Password" name="Password" required>
-
-                <button type="submit"> LOGIN</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-            </div>
-        </form>
     </body>
 </html>
