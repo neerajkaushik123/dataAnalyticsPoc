@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<head>
         <title>Login page </title>
         <style>
              form{
@@ -62,24 +60,31 @@
         </style>
     </head>
     <body>
-         <div class="background-image" >
+        
+        <div class="background-image" >
             <form action="action_page.php" class="container">
                 <h1>LOGIN</h1>
          </div>
       
 
-            <div class="container">
-                <label for="username"> <b>USERNAME</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+           
+                <form method="POST" action="">
 
-                <label for="psw"> <b>PASSWORD</b></label>
-                <input type="password" placeholder="Enter Password" name="Password" required>
-
+                    {% csrf_token %}
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                    <br>
+                    <input type="submit" value="Login">
+                </form>
+    
                 <button type="submit"> LOGIN</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
-            </div>
+            </div></form>
 
             <div class="container" style="background-color:#f1f1f1">
                 <button type="button" class="cancelbtn">Cancel</button>

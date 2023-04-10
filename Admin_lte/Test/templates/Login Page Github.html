@@ -1,33 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Login page </title>
-        <style>
-            img {
-                image border-radius: 50%;
-                filter: grayscale 90%;
+<head>
+    <title>Login page</title>
+    <style>
+        form {
+            border: 3px solid aliceblue;
+        }
 
-            }
+        button {
+            background-color: rgba(212, 192, 155, 0.918);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
 
-        </style>
-    </head>
-    <body>
+        body {
+            background-image: url(https://cdn.wallpapersafari.com/50/79/PaIZyM.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
 
-            <div class="imgcontainer">
-                <img src="https://hips.hearstapps.com/womansday/assets/17/39/1506709524-cola-0247.jpg" alt="Cute dog" class="avatar">
- 
-            </div>
+        }
 
-            <form method="POST" action="">
-                {% csrf_token %}
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-                <br>
-                <input type="submit" value="Login">
-            </form>
+        img {
+            image border-radius: 50%;
+            height: 90px;
+            width: 80;
+            align: center;
+        }
 
-    </body>
+        text {
+            text-align: center;
+
+        }
+
+        .container {
+            position: relative;
+            right: 0;
+            margin: 20px;
+            max-width: 300px;
+            padding: 16px;
+            background-color: antiquewhite;
+        }
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="background-image">
+    <div class="container">
+        <h1>LOGIN</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="username"><b>USERNAME</b></label>
+            <input type="text" placeholder="Enter Username" id="username" name="username" required>
+
+            <label for="password"><b>PASSWORD</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="username" required>
+
+            <button type="submit">LOGIN</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </form>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
