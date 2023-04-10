@@ -18,16 +18,9 @@ def login_user(request):
             return redirect('yt/')
 
         
-       # user = authenticate(request, username=username, password=password)
-    
-        # if user is not None:
-        #     login(request, user)
-        #     messages.success(request, 'Working')
-        #     return redirect('')
-        # else:
-        #  messages.success(request, 'Failed')
-        #  return redirect('admin/')
-
+        else:
+            messages.error(request, 'Invalid login credentials.')
+            return redirect('login')
     else:
         return render(request, 'Login Page Github.html')
 
