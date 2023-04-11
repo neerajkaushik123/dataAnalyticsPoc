@@ -4,17 +4,21 @@
         <title>Login page </title>
         <style>
              form{
-                border: 3px solid aliceblue;
+                border: 3px transparent;
              }
 
              button {
-                background-color:rgba(212, 192, 155, 0.918) ;
+                background-color: transparent ;
                  color: white;
                  padding: 14px 20px;
                  margin: 8px 0;
                  border: none;
                  cursor: pointer;
                  width: 100%;
+                }
+
+                h1{
+                    text-align: center;
                 }
 
             body {
@@ -25,6 +29,12 @@
            
                 }
 
+                label {
+			display: block;
+			margin-bottom: 10px;
+			color: white;
+		    }
+
             img {
                 image border-radius: 50%;
                 height: 90px;
@@ -34,6 +44,8 @@
 
             text{
                 text-align: center;
+                font color: white;
+            
 
             }
             .container{
@@ -42,12 +54,12 @@
                 margin: 20px;
                 max-width: 300px;
                 padding: 16px;
-                background-color: antiquewhite;
+                background-color: transparent;
             }
 
             .btn {
                 background-color: #04AA6D;
-                color: white;
+                color: transparent;
                 padding: 16px 20px;
                 border: none;
                 cursor: pointer;
@@ -71,20 +83,33 @@
             <div class="container">
                 <label for="username"> <b>USERNAME</b></label>
                 <input type="text" placeholder="Enter Username" name="username" required>
-
-                <label for="psw"> <b>PASSWORD</b></label>
-                <input type="password" placeholder="Enter Password" name="Password" required>
-
+                <label for="Password"> <b>PASSWORD</b> </label> 
+                <input type="password" placeholder="Enter Password" id="myInput" required>
+                <label>
+                <input type="checkbox"  id="inlinecheckbox" onclick="myFunction()"> Show Password
+                </label>
                 <button type="submit"> LOGIN</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn">Cancel</button>
+            <div class="container" style="background-color:transparent>
+                <button type="button" class="cancelbtn">CANCEL</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
               </div>
+
+              <script>
+                function myFunction() {
+              var x = document.getElementById("myInput");
+              if (x.type === "password") {
+              x.type = "text";
+              } 
+              else {
+              x.type = "password";
+            }
+}
+              </script>
         </form>
     </body>
 </html>
