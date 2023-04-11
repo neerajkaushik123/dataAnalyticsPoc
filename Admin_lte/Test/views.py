@@ -1,8 +1,12 @@
+<<<<<<< Updated upstream
 from urllib import request
+=======
+>>>>>>> Stashed changes
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
+<<<<<<< Updated upstream
 def yt_vid(request):
     return render(request, 'ytvideo.html')
 
@@ -30,3 +34,25 @@ def login_user(request):
 
 
 
+=======
+
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        if username == 'admin' and password == 'admin':
+            user = authenticate(request, username=username, password=password)
+            login(request, user)
+            messages.success(request, 'You are now logged in.')
+            return redirect('yt_vid')
+        else:
+            messages.error(request, 'Invalid login credentials.')
+            return redirect('login')
+    else:
+        return render(request, 'Login Page Github.html')
+
+def yt_vid(request):
+    return render(request, 'ytvideo.html')
+
+>>>>>>> Stashed changes
