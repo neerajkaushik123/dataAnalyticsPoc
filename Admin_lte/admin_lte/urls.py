@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('', include('Test.urls')),
     path('yt/',include('Test.urls')),
+    path('pswd/', include('Test.urls'))
     
 
   
