@@ -1,18 +1,22 @@
-<<<<<<< Updated upstream
 from urllib import request
-=======
->>>>>>> Stashed changes
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from .models import UserEmail
 
-<<<<<<< Updated upstream
+
+
 def yt_vid(request):
     return render(request, 'ytvideo.html')
 
 
-def password_page(request):
-     return render(request,'password.html')
+def forgot_password(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        user_email = UserEmail(email=email)
+        user_email.save()
+    return render(request, 'password.html')
+
 
 def login_user(request):
     if request.method == 'POST':
@@ -34,8 +38,6 @@ def login_user(request):
 
 
 
-=======
-
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -55,4 +57,4 @@ def login_user(request):
 def yt_vid(request):
     return render(request, 'ytvideo.html')
 
->>>>>>> Stashed changes
+
