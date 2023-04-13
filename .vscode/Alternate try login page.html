@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alternate try login page</title>
+    <style>
+      body {
+        background-image: url(https://cdn.wallpapersafari.com/50/79/PaIZyM.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      form {
+        background-color: transparent;
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+      }
+      h2 {
+        text-emphasis-color: White;
+        color: aliceblue;
+
+     }
+     label{
+        color: whitesmoke;
+        font-size: 15px;
+     }
+      input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        margin: 5px;
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+      }
+      button[type="submit"] {
+        background-color: #9AADB9ff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      button[type="cancel"]{
+        background-color: #9AADB9ff;
+        color: aliceblue;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+
+    }
+    .psw{
+        text-size-adjust: 25px;
+        color: aliceblue;
+    }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h2>LOGIN</h2>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username...">
+      <label for="password">Password</label>
+      <input type="password" id="myInput" name="password" placeholder="Enter password...">
+      <label>
+      <input type="checkbox"  id="inlinecheckbox" onclick="myFunction()"> Show Password</label>
+      <label>
+        <input type="checkbox" id="inlinecheckbox" name="Remember">Remember me
+      </label><br>
+      <button type="submit">Submit</button><br><br><br>
+      <button type="Cancel" class="cancelbtn">Cancel</button><br>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+
+      <script>
+        function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+      x.type = "text";
+      } 
+      else {
+      x.type = "password";
+    }
+}
+      </script>
+    </form>
+  </body>
+</html>
+
